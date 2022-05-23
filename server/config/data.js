@@ -1,2 +1,0 @@
-const employees = [{}];
-const leaveTypes = [{}];
