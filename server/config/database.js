@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const employees = require("./mock-data.json");
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -30,14 +31,13 @@ let leaveRequest = `CREATE TABLE if not exists LeaveRequest(
     emp_id int not null,
     leaveType varchar(255) not null,
     quantity int not null,
-    startDate DateTime not null,     
-    endDate DateTime not null,
-    dateCreated DateTime not null,
+    startDate date not null,     
+    endDate date not null,
+    dateCreated date not null,
     status varchar(255) not null,
-    approvedBy int not null,                
+    approvedBy int null,                
     PRIMARY KEY (id),
     FOREIGN KEY (emp_id) REFERENCES Employee(id),
-    FOREIGN KEY (leaveType) REFERENCES LeaveType(id),
     FOREIGN KEY (approvedBy) REFERENCES Employee(id)
 )`;
 
@@ -52,6 +52,10 @@ pool.query(leaveType, (err, results) => {
 pool.query(leaveRequest, (err, results) => {
   if (err) throw err;
   console.log("Leave Request table created");
+});
+
+employees.map((emp) => {
+  return pool.query();
 });
 
 module.exports = pool;
