@@ -481,10 +481,20 @@ select::selection {
 /*---------------------------------------------*/
 .wrap-pic1 {
   padding-bottom: 4%;
+  display: flex;
+  justify-content: space-between;
+  height: 40%;
+  align-items: center;
 }
 .wrap-pic1 img {
-  width: 10%;
+  width: 40%;
   max-width: 100%;
+}
+.header_info {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }
 
 /*//////////////////////////////////////////////////////////////////

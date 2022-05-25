@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../logo.png";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import { UserContext } from "../../context/UserContext";
 
 function Login() {
+  const [userData, setUserData] = useContext(UserContext);
   const [isSignIn, setSignIn] = useState(true);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     setSignIn(!isSignIn);
   };
+
+  useEffect(() => {
+    if (userData[0]) {
+      navigate("/leave");
+    }
+  }, [userData]);
 
   return (
     <div className="size1 bg0 where1-parent">
@@ -40,7 +50,7 @@ function Login() {
 
       {/* Form */}
       <div className="size3 flex-col-sb flex-w respon1">
-        <div className="p-t-250">
+        <div className="p-t-200">
           <p className="m1-txt1 p-b-36">Che Leave Management System</p>
           {isSignIn ? <SignIn /> : <SignUp />}
 

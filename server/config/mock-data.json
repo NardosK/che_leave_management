@@ -1,0 +1,14 @@
+[
+  {
+    "fullName": "Employee De Che",
+    "gender": "Male",
+    "employmentDate": "2022-05-20",
+    "role": "Employee"
+  },
+  {
+    "fullName": "HR_Manager De Che",
+    "gender": "Female",
+    "employmentDate": "2022-05-20",
+    "role": "HR Manager"
+  }
+]

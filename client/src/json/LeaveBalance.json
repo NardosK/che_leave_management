@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Annual Leave",
+    "balance": 15,
+    "includesHoliday": false
+  },
+  {
+    "name": "Sick Leave",
+    "balance": 90,
+    "includesHoliday": true
+  },
+  {
+    "name": "Maternal Leave",
+    "balance": 120,
+    "includesHoliday": true
+  },
+  {
+    "name": "Paternal Leave",
+    "balance": 5,
+    "includesHoliday": false
+  },
+  {
+    "name": "Legal Leave",
+    "balance": 7,
+    "includesHoliday": false
+  }
+]
